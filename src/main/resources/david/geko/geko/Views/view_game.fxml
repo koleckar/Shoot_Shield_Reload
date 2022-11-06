@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" prefHeight="720.0" prefWidth="1240.0" stylesheets="@../styling.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.geko.geko.ControllerGame">
+    <Rectangle fx:id="player3Hurt" arcHeight="5.0" arcWidth="5.0" fill="#ff8b8b" height="356.0" layoutX="622.0" layoutY="360.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="614.0" />
+    <Rectangle fx:id="player2Hurt" arcHeight="5.0" arcWidth="5.0" fill="#ff8b8b" height="356.0" layoutX="621.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="614.0" />
+    <Rectangle fx:id="player1Hurt" arcHeight="5.0" arcWidth="5.0" fill="#ff8b8b" height="726.0" layoutY="-5.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="620.0" />
+    <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#976767" height="112.0" layoutY="378.0" opacity="0.43" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="620.0" />
+    <Line endX="193.5" endY="378.0" startX="215.2928924560547" startY="490.0" />
+    <Line endX="620.0" endY="120.0" startX="620.0" startY="720.0" strokeLineCap="BUTT" strokeWidth="3.0" />
+    <Line endX="410.5" endY="378.0" startX="431.29290771484375" startY="490.0" />
+    <Line endX="700.0" endY="360.0" opacity="0.54" startX="1200.0" startY="360.0">
+        <effect>
+            <Shadow />
+        </effect>
+    </Line>
+
+    <Text fx:id="textPlayer1Name" layoutX="920.0" layoutY="450.0" text="Player Name: " wrappingWidth="96.0">
+        <font>
+            <Font name="Ink Free" size="12.0" />
+        </font>
+    </Text>
+    <Text fx:id="textPlayer2Name" layoutX="920.0" layoutY="50.0" text="Player Name: " wrappingWidth="96.0">
+        <font>
+            <Font name="Ink Free" size="12.0" />
+        </font>
+    </Text>
+    <Text fx:id="textPlayer3Name" layoutX="250.0" layoutY="75.0" text="Player Name: " wrappingWidth="96.0">
+        <font>
+            <Font name="Ink Free" size="12.0" />
+        </font>
+    </Text>
+
+
+    <Button fx:id="buttonShoot" layoutX="37.0" layoutY="398.0" onAction="#onShootButtonClicked" prefHeight="60.0" prefWidth="60.0">
+        <graphic>
+            <ImageView fx:id="shoot" fitHeight="77.0" fitWidth="129.0" layoutX="37.0" layoutY="398.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <effect>
+                    <SepiaTone level="0.28"/>
+                </effect>
+                <Image url="@../Images/shoot.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button fx:id="buttonShield" layoutX="464.0" layoutY="386.0" onAction="#onShieldButtonClicked">
+        <graphic>
+            <ImageView fitHeight="96.0" fitWidth="110.0" layoutX="464.0" layoutY="386.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <effect>
+                    <SepiaTone level="0.29"/>
+                </effect>
+                <Image url="@../Images/shield.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button fx:id="buttonAmmo" layoutX="255.0" layoutY="391.0" onAction="#onReloadButtonClicked">
+        <graphic>
+            <ImageView fx:id="imageViewReload" fitHeight="87.0" fitWidth="110.0" layoutX="255.0" layoutY="391.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <effect>
+                    <SepiaTone level="0.36"/>
+                </effect>
+                <Image url="@../Images/ammo.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <VBox fx:id="player1HeartsVBox" layoutX="400.0" layoutY="60.0" prefHeight="155.0" prefWidth="55.0" rotate="8.0">
+        <ImageView fx:id="imageViewPlayer1Heart1" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+        <ImageView fx:id="imageViewPlayer1Heart2" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+        <ImageView fx:id="imageViewPlayer1Heart3" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+    </VBox>
+
+    <VBox fx:id="player2HeartsVBox" layoutX="1070.0" layoutY="30.0" prefHeight="120.0" prefWidth="40.0" rotate="-5.0">
+        <ImageView fx:id="imageViewPlayer2Heart1" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+        <ImageView fx:id="imageViewPlayer2Heart2" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+        <ImageView fx:id="imageViewPlayer2Heart3" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+    </VBox>
+
+    <VBox fx:id="player3HeartsVBox" layoutX="1070.0" layoutY="430.0" prefHeight="120.0" prefWidth="40.0" rotate="3.0">
+        <ImageView fx:id="player3Heart1ImageView" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+        <ImageView fx:id="player3Heart2ImageView" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+        <ImageView fx:id="player3Heart3ImageView" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../Images/heart2.png"/>
+        </ImageView>
+    </VBox>
+
+    <ImageView fx:id="imageViewPlayer1" fitHeight="200.0" fitWidth="200.0" layoutX="160.0" layoutY="100.0" />
+
+    <Button fx:id="buttonPlayer2" layoutX="870.0" layoutY="70.0" onAction="#onPlayer2ButtonClicked" prefHeight="160.0" prefWidth="160.0">
+        <graphic>
+            <ImageView fx:id="imageViewPlayer2" fitHeight="160.0" fitWidth="160.0" />
+        </graphic>
+        <effect>
+            <InnerShadow />
+        </effect>
+    </Button>
+
+    <Button fx:id="buttonPlayer3" layoutX="870.0" layoutY="470.0" onAction="#onPlayer3ButtonClicked" prefHeight="160.0" prefWidth="160.0">
+        <graphic>
+            <ImageView fx:id="imageViewPlayer3" fitHeight="160.0" fitWidth="160.0" />
+        </graphic>
+        <effect>
+            <InnerShadow />
+        </effect>
+    </Button>
+
+    <ImageView fx:id="bullet3to1" fitHeight="80.0" fitWidth="80.0" layoutX="800.0" layoutY="410.0" pickOnBounds="true"
+               preserveRatio="true" rotate="-150.0" visible="false">
+        <Image url="@../Images/bullet.png"/>
+    </ImageView>
+    <ImageView fx:id="bullet3to2" fitHeight="80.0" fitWidth="80.0" layoutX="900.0" layoutY="390.0" pickOnBounds="true"
+               preserveRatio="true" rotate="-90.0" visible="false">
+        <Image url="@../Images/bullet.png"/>
+    </ImageView>
+
+    <ImageView fx:id="bullet1to3" fitHeight="80.0" fitWidth="80.0" layoutX="370.0" layoutY="270.0" pickOnBounds="true"
+               preserveRatio="true" rotate="30.0" visible="false">
+        <Image url="@../Images/bullet.png"/>
+    </ImageView>
+    <ImageView fx:id="bullet1to2" fitHeight="80.0" fitWidth="80.0" layoutX="380.0" layoutY="240.0" pickOnBounds="true"
+               preserveRatio="true" rotate="-20.0" visible="false">
+        <Image url="@../Images/bullet.png"/>
+    </ImageView>
+
+    <ImageView fx:id="bullet2to3" fitHeight="80.0" fitWidth="80.0" layoutX="910.0" layoutY="230.0" pickOnBounds="true"
+               preserveRatio="true" rotate="90.0" visible="false">
+        <Image url="@../Images/bullet.png"/>
+    </ImageView>
+    <ImageView fx:id="bullet2to1" fitHeight="80.0" fitWidth="80.0" layoutX="800.0" layoutY="200.0" pickOnBounds="true"
+               preserveRatio="true" rotate="-180.0" visible="false">
+        <Image url="@../Images/bullet.png"/>
+    </ImageView>
+    <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="160.0" layoutY="100.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../Images/frame.png"/>
+    </ImageView>
+
+    <ImageView fx:id="imageViewLoadedPlayer1" fitHeight="100.0" fitWidth="100.0" layoutX="90.0" layoutY="50.0"
+               pickOnBounds="true" preserveRatio="true" rotate="-10.0" scaleX="1.7" scaleY="1.7">
+        <Image url="@../Images/loaded.png"/>
+    </ImageView>
+
+    <ImageView fx:id="imageViewLoadedPlayer2" fitHeight="100.0" fitWidth="100.0" layoutX="800.0" layoutY="40.0"
+               pickOnBounds="true" preserveRatio="true" rotate="-10.0">
+        <Image url="@../Images/loaded.png"/>
+    </ImageView>
+
+    <ImageView fx:id="imageViewLoadedPlayer3" fitHeight="100.0" fitWidth="100.0" layoutX="800.0" layoutY="450.0"
+               pickOnBounds="true" preserveRatio="true" rotate="-10.0">
+        <Image url="@../Images/loaded.png"/>
+    </ImageView>
+
+    <Line fx:id="arrow1" endX="355.0" endY="-154.0" layoutX="551.0" layoutY="300.0" startX="-369.0" startY="108.0" stroke="#eb0303" strokeWidth="2.0" visible="false" />
+    <Line fx:id="arrow2" endX="747.0" endY="117.0" layoutX="181.0" layoutY="409.0" startX="2.0" startY="4.0" stroke="#f20404" strokeWidth="2.0" visible="false" />
+    <Line fx:id="arrowhead11" endX="66.2071533203125" endY="-0.20709228515625" layoutX="840.0" layoutY="145.0" startX="47.0" stroke="#e10707" strokeWidth="2.0" visible="false" />
+    <Line fx:id="arrowhead12" endX="111.5" endY="-124.5" layoutX="794.0" layoutY="270.0" startX="103.0" startY="-111.0" stroke="#d00202" strokeWidth="2.0" visible="false" />
+    <Line fx:id="arrowhead22" endX="56.0" layoutX="870.0" layoutY="527.0" startX="42.0" startY="8.0" stroke="RED" strokeWidth="2.0" visible="false" />
+    <Line fx:id="arrowhead21" endX="47.0" endY="32.0" layoutX="880.0" layoutY="493.0" startX="33.0" startY="18.0" stroke="#d70000" strokeWidth="2.0" visible="false" />
+    <Rectangle fx:id="countdownBlanket" arcHeight="5.0" arcWidth="5.0" fill="#606972" height="720.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" visible="false" width="1240.0" />
+
+    <Text fx:id="countdownText" fill="RED" layoutX="600.0" layoutY="300.0" scaleX="4.0" scaleY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+        <font>
+            <Font name="Goudy Old Style" size="96.0" />
+        </font>
+    </Text>
+
+    <ImageView fx:id="imageViewShieldPlayer2" fitHeight="129.0" fitWidth="145.0" layoutX="822.0" layoutY="149.0"
+               pickOnBounds="true" preserveRatio="true">
+        <effect>
+            <SepiaTone level="0.29"/>
+        </effect>
+        <Image url="@../Images/shield.png"/>
+    </ImageView>
+
+    <ImageView fx:id="imageViewShieldPlayer3" fitHeight="129.0" fitWidth="145.0" layoutX="806.0" layoutY="538.0"
+               pickOnBounds="true" preserveRatio="true">
+        <effect>
+            <SepiaTone level="0.29"/>
+        </effect>
+        <Image url="@../Images/shield.png"/>
+    </ImageView>
+
+    <ImageView fx:id="imageViewShieldPlayer1" fitHeight="129.0" fitWidth="145.0" layoutX="304.0" layoutY="216.0"
+               pickOnBounds="true" preserveRatio="true">
+        <effect>
+            <SepiaTone level="0.29"/>
+        </effect>
+        <Image url="@../Images/shield.png"/>
+    </ImageView>
+
+    <Circle centerX="620.0" centerY="60.0" fill="#73bfaf" opacity="0.28" radius="60.0" stroke="WHITE" strokeType="INSIDE" />
+
+    <Text fx:id="textTimer" layoutX="604.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
+        <font>
+            <Font name="Ink Free" size="36.0" />
+        </font>
+    </Text>
+    <ImageView fx:id="imageViewLetsGo" fitHeight="327.0" fitWidth="456.0" layoutX="400.0" layoutY="65.0" opacity="0.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@../Images/lets_go.png"/>
+    </ImageView>
+
+</Pane>

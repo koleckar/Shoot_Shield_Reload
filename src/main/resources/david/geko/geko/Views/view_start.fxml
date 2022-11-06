@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox fx:id="vBox" id="vbox" alignment="CENTER" spacing="50" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="david.geko.geko.ControllerStart"
+      stylesheets="@../styling.css">
+
+    <Button fx:id="singlePlayerButton" onAction="#onSinglePlayerButtonClick" text="Single-player">
+        <font>
+            <Font name="Ink Free" size="18.0"/>
+        </font>
+    </Button>
+
+    <Button fx:id="hostGameButton" onAction="#onHostGameButtonClick" text="Host game">
+        <font>
+            <Font name="Ink Free" size="18.0"/>
+        </font>
+    </Button>
+
+    <Button fx:id="joinGameButton" onAction="#onJoinGameButtonClick" text="Join game">
+        <font>
+            <Font name="Ink Free" size="18.0"/>
+        </font>
+    </Button>
+
+</VBox>
